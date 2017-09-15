@@ -9,11 +9,11 @@ public class ExpressaoAnd extends ExpressaoBinaria {
 		super(op1, op2);
 	}
 	public boolean eval (Map <String, Boolean> valoresVariaveis) {
-		return (valoresVariaveis.get(super.getExpLogicaUm()) && valoresVariaveis.get(super.getExpLogicaDois()));
+		return getExpLogicaUm().eval(valoresVariaveis) && getExpLogicaDois().eval(valoresVariaveis);
 	}
 	@Override
 	public String toString() {
-		return  "(" + super.getExpLogicaUm() + " ^ " + super.getExpLogicaDois() + ")";
+		return  "(" + getExpLogicaUm() + " ^ " + getExpLogicaDois() + ")";
 	}
 	
 }

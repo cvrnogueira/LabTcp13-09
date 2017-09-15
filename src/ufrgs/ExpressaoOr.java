@@ -8,10 +8,10 @@ public class ExpressaoOr extends ExpressaoBinaria{
 		super(op1, op2);
 	}
 	public boolean eval (Map <String, Boolean> valoresVariaveis) {
-		return (valoresVariaveis.get(super.getExpLogicaUm()) || valoresVariaveis.get(super.getExpLogicaDois()));
+		return (getExpLogicaUm().eval(valoresVariaveis) || getExpLogicaDois().eval(valoresVariaveis));
 	}
 	@Override
 	public String toString() {
-		return  "(" + super.getExpLogicaUm() + " v " + super.getExpLogicaDois() + ")";
+		return  "(" + getExpLogicaUm() + " v " + getExpLogicaDois() + ")";
 	}
 }

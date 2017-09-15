@@ -9,7 +9,7 @@ public class ExpressaoImplicacao extends ExpressaoBinaria {
 	}
 	public boolean eval(Map<String, Boolean> valoresVariaveis) {
 		
-		if((valoresVariaveis.get(super.getExpLogicaUm()) == true) && (valoresVariaveis.get(super.getExpLogicaDois()) == false)) {
+		if((getExpLogicaUm().eval(valoresVariaveis) == true) && (getExpLogicaUm().eval(valoresVariaveis) == false)) {
 			return false;
 		}
 		else {
@@ -19,6 +19,6 @@ public class ExpressaoImplicacao extends ExpressaoBinaria {
 
 	@Override
 	public String toString() {
-		return  "(" + super.getExpLogicaUm() + " --> " + super.getExpLogicaDois() + ")";
+		return  "(" +getExpLogicaUm() + " --> " + getExpLogicaDois() + ")";
 	}
 }

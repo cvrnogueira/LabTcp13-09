@@ -8,11 +8,12 @@ public class ExpressaoNot extends ExpressaoUnaria {
 		super(exp);
 	}
 	public boolean eval (Map <String, Boolean> valoresVariaveis) {
-		return !(valoresVariaveis.get(super.getExpLogicaUm()));
+
+		return !(getExpLogicaUm().eval(valoresVariaveis));
 	}
 	@Override
 	public String toString() {
-		return "not(" + super.getExpLogicaUm() + ")";
+		return "not(" + getExpLogicaUm() + ")";
 	}
 
 }
